@@ -44,10 +44,15 @@ const JobDetails = () => {
         switch (activeTab) {
             case "Qualifications":
                 return (
-                    <Specifics
-                        title='Qualifications'
-                        points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
-                    />
+                    data && data[0] ? (
+                        <Specifics
+                            title='Qualifications'
+                            points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+                        />
+                    ) : (
+                            <></>
+                        )
+
                 );
 
             case "About":
@@ -55,16 +60,21 @@ const JobDetails = () => {
                     data && data[0] ? (
                         <JobAbout info={data[0]?.job_description ?? "No data provided"} />
                     ) : (
-                        <div>Loading...</div>
+                        <></>
                     )
                 );
 
             case "Responsibilities":
                 return (
-                    <Specifics
-                        title='Responsibilities'
-                        points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
-                    />
+                    data && data[0] ? (
+                        <Specifics
+                            title='Responsibilities'
+                            points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
+                        />
+                    ) : (
+                            <></>
+                        )
+
                 );
 
             default:
