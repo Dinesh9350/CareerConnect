@@ -52,7 +52,11 @@ const JobDetails = () => {
 
             case "About":
                 return (
-                    <JobAbout info={data[0]?.job_description ?? "No data provided"} />
+                    data && data[0] ? (
+                        <JobAbout info={data[0]?.job_description ?? "No data provided"} />
+                    ) : (
+                        <div>Loading...</div>
+                    )
                 );
 
             case "Responsibilities":
@@ -171,7 +175,9 @@ const JobDetails = () => {
                                 {displayTabContent()}
                             </View>
 
+
                         </ScrollView>
+                        <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results/'} />
                     </SafeAreaView>
                 </>}
         </>

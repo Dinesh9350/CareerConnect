@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text, TouchableOpacity, Image, Linking} from 'react-native'
-
+import { COLORS, icons, SIZES } from "../../../constants";
 import styles from './footer.style'
 
 const JobFooter = ({url}) => {
