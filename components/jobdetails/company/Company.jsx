@@ -3,6 +3,7 @@ import {View, Text, Image} from 'react-native'
 
 import styles from './company.style'
 import {checkImageURL} from "../../../utils";
+import { COLORS, icons, SIZES } from "../../../constants";
 
 const Company = ({companyLogo, companyName, jobTitle, Location}) => {
 
@@ -20,7 +21,7 @@ const Company = ({companyLogo, companyName, jobTitle, Location}) => {
             <View style={styles.companyInfoBox}>
                 <Text style={styles.companyName}>{companyName}</Text>
                 <View style={styles.locationBox}>
-                    <Image source={icons.location} resizeMode={'contain'} style={styles.location} />
+                    <Image source={icons.location} resizeMode={'contain'} style={styles.locationImage} />
                     <Text style={styles.locationName}>{Location}</Text>
                 </View>
             </View>
